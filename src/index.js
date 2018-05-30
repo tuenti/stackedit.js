@@ -28,16 +28,15 @@ const styleContent = `
   right: 0;
   bottom: 0;
   left: 0;
-  height: 95%;
-  width: 90%;
-  max-width: 1280px;
+  height: 100%;
+  width: 100%;
   border-radius: 2px;
   overflow: hidden;
 }
 
 @media (max-width: 920px) {
   .stackedit-iframe-container {
-    width: 95%;
+    width: 100%;
   }
 }
 
@@ -188,6 +187,10 @@ class Stackedit {
             if (silent) {
               this.close();
             }
+            break;
+          case 'save':
+            // Trigger save event
+            this.$trigger('save');
             break;
           case 'close':
           default:
